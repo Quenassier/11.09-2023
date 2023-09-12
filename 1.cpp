@@ -19,10 +19,10 @@ int main() {
     cout << "Введите процентную ставку (годовую): ";
     cin >> interest_rate;
 
-    cout << "Введите тип кредита (аннуитетный или дифференцированный): ";
+    cout << "Введите тип кредита (1-аннуитетный или 2-дифференцированный): ";
     cin >> loan_type;
 
-    double monthly_payment, total_payment, overpayment;
+    double monthly_payment, total_payment, overpayment, principal ,interest_payment, principal_payment, term ,total_payment2  ;
 
     if (loan_type == "1") {
         double monthly_interest_rate = interest_rate / 12 / 100;
@@ -31,7 +31,17 @@ int main() {
         overpayment = total_payment - loan_amount;
     }
     else if (loan_type == "2") {
-        
+        double monthly_interest_rate = interest_rate / 12 / 100;
+
+    double interest_payment = principal * monthly_interest_rate;
+
+   
+    double principal_payment = principal / term;
+
+
+    double total_payment2 = principal_payment + interest_payment;
+
+
     }
     else {
         cout << "Неверный тип кредита." << endl;
@@ -41,6 +51,8 @@ int main() {
     cout << "Ежемесячный платеж: " << monthly_payment << endl;
     cout << "Переплата по кредиту: " << overpayment << endl;
     cout << "Общая выплата: " << total_payment << endl;
+
+
 
     return 0;
 }
